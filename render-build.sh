@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-echo "⬇️ Installing spaCy language model..."
+echo "🔧 Installing dependencies required before downloading spaCy model"
+pip install spacy
+
+echo "🌐 Downloading spaCy language model..."
 python -m spacy download en_core_web_sm
+
+echo "✅ spaCy language model installed"
