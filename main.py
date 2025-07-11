@@ -49,7 +49,7 @@ def check_url_reputation(url):
         return url_cache[url]
 
     try:
-        api_key = "bd96293883d4034e745045dac70a3ec35ef89b05cc41b8ccf91f3b8535d0923b"
+        api_key =  api_key = os.getenv("VT_API_KEY") 
         headers = {"x-apikey": api_key}
         url_id = base64.urlsafe_b64encode(url.encode()).decode().strip("=")
 
