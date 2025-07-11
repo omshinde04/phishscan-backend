@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-multipart
+pytesseract
+Pillow
+pandas
+scikit-learn
+joblib
+transformers
+datasets
+torch
