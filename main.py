@@ -49,7 +49,7 @@ def check_url_reputation(url):
         return url_cache[url]
 
     try:
-        api_key =  api_key = os.getenv("VT_API_KEY") 
+        api_key = os.getenv("VT_API_KEY")  # ✅ Fixed line
         headers = {"x-apikey": api_key}
         url_id = base64.urlsafe_b64encode(url.encode()).decode().strip("=")
 
@@ -185,3 +185,13 @@ async def extract_text(image: UploadFile = File(...)):
         return {"status": "success", "extracted_text": text.strip()}
     except Exception as e:
         return {"status": "error", "message": str(e)}
+
+# ✅ Health Check Route (Important for Render)
+@app.get("/")
+async def root():
+    return {"message": "🚀 PhishScan backend is live!"}
+
+# ✅ Log App Startup
+@app.on_event("startup")
+async def startup_event():
+    print("✅ App started successfully.")
