@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo "🔧 Installing dependencies required before downloading spaCy model"
-pip install spacy
-pip install uvicorn
+# Install all Python packages from requirements.txt
+pip install -r requirements.txt
 
-echo "🌐 Downloading spaCy language model..."
+# Download spaCy language model
 python -m spacy download en_core_web_sm
 
-echo "✅ spaCy language model installed"
+# Optional but recommended: Confirm uvicorn is available
+pip install uvicorn
